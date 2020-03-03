@@ -411,6 +411,7 @@ class NodeUpdater:
     def do_update(self):
         self.provider.set_node_tags(
             self.node_id, {TAG_RAY_NODE_STATUS: STATUS_WAITING_FOR_SSH})
+
         deadline = time.time() + NODE_START_WAIT_S
         self.wait_ready(deadline)
 
